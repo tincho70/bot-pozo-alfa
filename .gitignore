@@ -1,0 +1,23 @@
+# Ignore hidden files
+# But pay attention to certain specific ones
+!.env.example
+!.envrc
+!.eslintrc.json
+!.gitattributes
+!.gitconfig
+!.github
+!.gitignore
+!.gitkeep
+!/**/.gitkeep
+!.nvmrc
+!.pnp.cjs
+!.pnp.loader.mjs
+!.prettierignore
+!.prettierrc.json
+!.vscode
+!.yarn
+
+.env
+yarn-error.log
+dist/
+node_modules/

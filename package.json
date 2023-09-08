@@ -1,0 +1,32 @@
+{
+    "name": "bot-thread",
+    "version": "0.2.0",
+    "description": "A simple Discord bot that publishes active threads in the server",
+    "author": "Tincho",
+    "license": "Proprietary",
+    "main": "./dist/index.js",
+    "engines": {
+        "node": ">=18.15.0"
+    },
+    "scripts": {
+        "dev": "tsnd --respawn ./src/index.ts",
+        "build": "tsc",
+        "format": "prettier --write \"**/*.{css,js,json,jsx,ts,tsx}\"",
+        "docker:build": "docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t masize/dolar-blue-bot:latest --push ."
+    },
+    "dependencies": {
+        "discord.js": "^14.11.0",
+        "dotenv": "^16.3.1",
+        "node-fetch": "2.6.7",
+        "ts-node": "^10.9.1"
+    },
+    "devDependencies": {
+        "@types/node": "^18.16.19",
+        "@types/node-fetch": "~2.6.4",
+        "eslint": "^8.45.0",
+        "prettier": "^2.8.8",
+        "ts-node-dev": "^2.0.0",
+        "tslib": "^2.6.0",
+        "typescript": "^4.9.5"
+    }
+}
