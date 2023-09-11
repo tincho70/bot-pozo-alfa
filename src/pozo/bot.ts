@@ -6,7 +6,7 @@ const botPozo = (client: Client) => {
     client.updateWalletInfo = async (apiKey: string) => {
         const walletInfo = await getWalletInfo(apiKey)
         if (walletInfo) {
-            client.user!.setActivity(`Pozo :lacrylta:`, {
+            client.user!.setActivity(`Pozo :lacrypta:`, {
                 type: ActivityType.Watching
             })
             const balance = Math.ceil(walletInfo.balance / 1000)
