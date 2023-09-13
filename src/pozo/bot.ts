@@ -16,7 +16,7 @@ const botPozo = (client: Client) => {
             const balance = Math.ceil(walletInfo.balance / 1000)
             client.guilds.cache.forEach((guild, key) => {
                 guild.members.me?.setNickname(
-                    `${balance} sats`
+                    `${balance.toLocaleString('es-AR')} sats`
                 )
             })
         }
