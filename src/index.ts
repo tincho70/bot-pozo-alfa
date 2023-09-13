@@ -28,7 +28,7 @@ for (const file of eventFiles) {
 }
 
 client.commands = new Collection<string, SlashCommand>()
-const commandsPath = join(__dirname, 'commands')
+/* const commandsPath = join(__dirname, 'commands')
 const commandFiles = readdirSync(commandsPath)
 
 for (const file of commandFiles) {
@@ -43,7 +43,7 @@ for (const file of commandFiles) {
             `[WARNING] The command at ${filePath} is missing a required "data" or "execute" property.`
         )
     }
-}
+} */
 
 const apiKey = process.env.INVOICE_READ_KEY;
 if (!apiKey) {

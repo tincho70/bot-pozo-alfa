@@ -6,8 +6,12 @@ const botPozo = (client: Client) => {
     client.updateWalletInfo = async (apiKey: string) => {
         const walletInfo = await getWalletInfo(apiKey)
         if (walletInfo) {
-            client.user!.setActivity(`Pozo :lacrypta:`, {
-                type: ActivityType.Watching
+            client.user!.setPresence({
+                activities: [{
+                     type: ActivityType.Custom,
+                     name: "custom", // name is exposed through the API but not shown in the client for ActivityType.Custom
+                     state: "⚡ Pozo ⚡",
+                }]
             })
             const balance = Math.ceil(walletInfo.balance / 1000)
             client.guilds.cache.forEach((guild, key) => {

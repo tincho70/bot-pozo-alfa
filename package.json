@@ -15,7 +15,7 @@
         "docker:build": "docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t masize/dolar-blue-bot:latest --push ."
     },
     "dependencies": {
-        "discord.js": "^14.11.0",
+        "discord.js": "^14.13.0",
         "dotenv": "^16.3.1",
         "node-fetch": "2.6.7",
         "ts-node": "^10.9.1"
