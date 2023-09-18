@@ -3,7 +3,7 @@ import { ApiWallet } from 'src/types'
 
 const getWalletInfo = async (apiKey: string): Promise<ApiWallet | undefined> => {
     try {
-        const response = await fetch(' https://wallet.lacrypta.ar/api/v1/wallet', {
+        const response = await fetch('https://wallet.lacrypta.ar/api/v1/wallet', {
             method: 'GET',
             headers: {
                 Accept: 'application/json',
