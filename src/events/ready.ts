@@ -8,7 +8,7 @@ const event: BotEvent = {
     once: true,
     execute: async (client: Client) => {
         botPozo(client)
-        client.updateWalletInfo(process.env.INVOICE_READ_KEY!)
+        await client.updateWalletInfo(process.env.INVOICE_READ_KEY!)
         deployCommands(client)
         console.log('Discord bot ready with API_KEY: ', process.env.INVOICE_READ_KEY!)
     }

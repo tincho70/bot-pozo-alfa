@@ -1,35 +1,39 @@
 import { Client, REST, Routes } from 'discord.js'
 
 const deployCommands = (client: Client) => {
-    const commands: string[] = []
+    
+    if (client.commands.size > 0) {
 
-    client.commands.forEach((command) => {
-        commands.push(command.data.toJSON())
-    })
+        const commands: string[] = []
 
-    // Construct and prepare an instance of the REST module
-    const rest = new REST().setToken(process.env.DISCORD_BOT_TOKEN!);
+        client.commands.forEach((command) => {
+            commands.push(command.data.toJSON())
+        })
 
-    // and deploy your commands!
-    (async () => {
-        try {
-            console.log(
-                `Started refreshing ${commands.length} application (/) commands.`
-            )
+        // Construct and prepare an instance of the REST module
+        const rest = new REST().setToken(process.env.DISCORD_BOT_TOKEN!);
 
-            // The put method is used to fully refresh all commands in the guild with the current set
-            rest.put(Routes.applicationCommands(process.env.DISCORD_APP_ID!), {
-                body: commands
-            }).then((data: any) => {
+        // and deploy your commands!
+        (async () => {
+            try {
                 console.log(
-                    `Successfully reloaded ${data.length} application (/) commands.`
+                    `Started refreshing ${commands.length} application (/) commands.`
                 )
-            })
-        } catch (error) {
-            // And of course, make sure you catch and log any errors!
-            console.error(error)
-        }
-    })()
+
+                // The put method is used to fully refresh all commands in the guild with the current set
+                rest.put(Routes.applicationCommands(process.env.DISCORD_APP_ID!), {
+                    body: commands
+                }).then((data: any) => {
+                    console.log(
+                        `Successfully reloaded ${data.length} application (/) commands.`
+                    )
+                })
+            } catch (error) {
+                // And of course, make sure you catch and log any errors!
+                console.error(error)
+            }
+        })()
+    }
 }
 
 export default deployCommands
