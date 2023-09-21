@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    bot-pozo:
+        container_name: bot-pozo
+        build:
+            context: .
+            dockerfile: Dockerfile
+        #restart: always
+        env_file: .env
+        environment:
+            - TZ=America/Argentina/Buenos_Aires
+            - NODE_ENV=development
+        image: 'tincho70/bot-pozo:latest'
+        ports:
+            - 3001:3001

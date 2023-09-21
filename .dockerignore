@@ -1,12 +1,15 @@
 # Folders
-/.cache
-/.git
-/dist
-/docs
-/misc
-/node_modules
-/temp
+.cache
+.git
+dist
+docs
+misc
+node_modules
+temp
+.pnpm-store
+.vscode
 
 # Files
-/npm-debug.log
+npm-debug.log
 .env
+compose.yaml
